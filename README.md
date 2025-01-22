@@ -6,7 +6,7 @@ JRuby-Rack supports Rails as well as any Rack-compatible Ruby web framework.
 
 For more information on Rack, visit http://rack.github.io/.
 
-**This README (master) targets JRuby-Rack 1.2 (unreleased) please use the
+**This README (master) targets JRuby-Rack 1.2. Please use the
 [1.1-stable](https://github.com/jruby/jruby-rack/tree/1.1-stable) branch for
 current stable 1.1.x releases.**
 
@@ -15,11 +15,14 @@ current stable 1.1.x releases.**
 
 ## Compatibility
 
-JRuby-Rack 1.1.x aims to be compatible with JRuby >= 1.6.4 (we recommend 1.7.x),
-Generally, any container that supports Java Servlet >= 2.5 (JEE 5) is supported.
+JRuby-Rack 1.2.x
+- aims to be compatible with JRuby >= 9.3 and its supported JDK versions
+- supports any container compatible with Java Servlet 3.0 API
 
-JRuby-Rack 1.2.x is expected to officially support JRuby >= 1.7.10 and will be
-compiled against the Java Servlet 3.0 API.
+JRuby-Rack 1.1.x
+- aims to be compatible with JRuby >= 1.6.4 (used successfully through JRuby 9.4.x)
+- supports any container compatible with Java Servlet 2.5 API (JEE 5)
+
 
 ## Getting Started
 
@@ -277,7 +280,7 @@ provided *config.ru* the bundled (latest) version of Rack will get loaded.
 Use **rack.version** to specify the Rack gem version to be loaded before rackup :
 
     # encoding: UTF-8
-    # rack.version: ~>1.3.6 (before code is loaded gem '~>1.3.6' will be called)
+    # rack.version: ~>2.2.10 (before code is loaded gem '~>2.2.10' will be called)
 
 Or the equivalent of doing `bundle exec rackup ...` if you're using Bundler :
 
