@@ -16,16 +16,20 @@ end
 
 appraise "rails70" do
   gem "rails", "~> 7.0.0"
+  gem "sprockets-rails"
 end
 
 appraise "rails71" do
   gem "rails", "~> 7.1.0"
+  gem "sprockets-rails"
 end
 
 appraise "rails72" do
   gem "rails", "~> 7.2.0"
+  gem "sprockets-rails"
 end
 
 appraise "rails80" do
   gem "rails", "~> 8.0.0"
+  gem "sprockets-rails"
 end
