@@ -52,6 +52,7 @@ jobs:
       if: github.ref == 'refs/heads/master' && matrix.java_version == env.DEFAULT_JAVA_VERSION && matrix.jruby_version == env.DEFAULT_JRUBY_VERSION && matrix.rack_version == env.DEFAULT_RACK_VERSION
 
   appraisals:
+    if: always()
     needs: build
     name: ${{ matrix.appraisal }} on ${{ matrix.jruby_version }} / Java ${{ matrix.java_version }}
     runs-on: ubuntu-latest
