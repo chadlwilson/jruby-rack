@@ -1,6 +1,6 @@
 require File.expand_path('../../spec_helper', File.dirname(__FILE__))
 
-describe org.jruby.rack.embed.Config do
+describe 'org.jruby.rack.embed.Config' do
 
   it "resolves properties from java.lang.System env" do
     begin

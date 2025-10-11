@@ -21,16 +21,9 @@ JRuby::Util.load_ext('org.jruby.rack.ext.RackLibrary')
 
 module SharedHelpers
 
-  java_import 'org.jruby.rack.RackContext'
-  java_import 'org.jruby.rack.RackConfig'
-  java_import 'org.jruby.rack.servlet.ServletRackContext'
-  java_import 'javax.servlet.ServletContext'
-  java_import 'javax.servlet.ServletConfig'
-
   def mock_servlet_context
-    @servlet_context = ServletContext.impl {}
-    @rack_config ||= RackConfig.impl {}
-    @rack_context ||= ServletRackContext.impl {}
+    @servlet_context = Java::JavaxServlet::ServletContext.impl {}
+    @rack_context ||= Java::OrgJrubyRackServlet::ServletRackContext.impl {}
     [@rack_context, @servlet_context].each do |context|
       allow(context).to receive(:log)
       allow(context).to receive(:isEnabled).and_return nil
@@ -39,8 +32,8 @@ module SharedHelpers
       allow(context).to receive(:getResource).and_return nil
       allow(context).to receive(:getContextPath).and_return "/"
     end
-    allow(@rack_context).to receive(:getConfig).and_return @rack_config
-    @servlet_config ||= ServletConfig.impl {}
+    allow(@rack_context).to receive(:getConfig).and_return Java::OrgJrubyRackMock::MockRackConfig::INSTANCE
+    @servlet_config ||= Java::JavaxServlet::ServletConfig.impl {}
     allow(@servlet_config).to receive(:getServletName).and_return "a Servlet"
     allow(@servlet_config).to receive(:getServletContext).and_return @servlet_context
     @servlet_context
@@ -55,7 +48,7 @@ module SharedHelpers
   end
 
   def raise_logger(level = 'WARN')
-    org.jruby.rack.logging.RaiseLogger.new(level, JRuby.runtime.out)
+    Java::OrgJrubyRackLogging::RaiseLogger.new(level, JRuby.runtime.out)
   end
 
   def gem_install_unless_installed(name, version)
@@ -163,7 +156,6 @@ RSpec.configure do |config|
   config.backtrace_exclusion_patterns = [
     /bin\//,
     #/gems/,
-    /spec\/spec_helper\.rb/,
   ]
 
 end

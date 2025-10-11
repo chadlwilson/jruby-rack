@@ -95,6 +95,12 @@ module JRuby::Rack
                     *(methods.sort.map do |m|
                         "#{m} = #{servlet_context.config.send(m)}" rescue "#{m} = <error: #{$?}>"
                       end))
+      # rescue java.lang.NoClassDefFoundError => e
+      #   if JRUBY_VERSION < "10"
+      #     raise e
+      #   end
+      #   output.puts("\n--- JRuby-Rack Config",
+      #               "<unavailable> = <error: JRuby 10 compatibility problem #{e}>") unless JRUBY_VERSION < "10"
       end
     end
 

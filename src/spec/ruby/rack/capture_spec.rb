@@ -14,6 +14,7 @@ describe JRuby::Rack::Capture do
     JRuby::Rack.context = nil
     $servlet_context = @servlet_context
     allow(@servlet_context).to receive(:init_parameter_names).and_return []
+    allow(@servlet_context).to receive(:config).and_return Java::OrgJrubyRackEmbed::Config.new
   end
 
   it "captures environment information" do
@@ -22,6 +23,7 @@ describe JRuby::Rack::Capture do
     error.capture
     error.store
     expect(error.output).to be_a StringIO
+    expect(error.output.string).to include "blah"
   end
 
   it "captures exception backtrace" do
@@ -32,6 +34,15 @@ describe JRuby::Rack::Capture do
       expect(e.output.string).to match /--- Backtrace/
       expect(e.output.string).to match /ZeroDivisionError/
     end
+  end
+
+  it "handles jruby 10 compatibility" do
+    expect(@servlet_context).to receive(:log)
+    error = Exception.new "rack start-up failed"
+    error.capture
+    error.store
+    expect(error.output).to be_a StringIO
+    expect(error.output.string).to include "blah"
   end
 
 end
