@@ -1,37 +1,44 @@
 GIT
   remote: https://github.com/jruby/warbler.git
-  revision: 523237b6d931efcd6f13a79692f6aa46ad997443
+  revision: 96bcfcace367532f88772111b2f8f6d9c64eaa17
   branch: master
   specs:
-    warbler (2.0.5)
-      jruby-jars (>= 9.0.0)
-      jruby-rack (>= 1.1.1, < 1.3)
-      ostruct (= 0.6.2)
-      rake (>= 13.0.3)
+    warbler (2.1.0)
+      jruby-jars (>= 9.4, < 10.1)
+      jruby-rack (~> 1.2.6)
+      ostruct (~> 0.6.2)
+      rake (~> 13.0, >= 13.0.3)
       rexml (~> 3.0)
-      rubyzip (>= 3.0.0)
+      rubyzip (~> 3.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.3.0)
     jruby-jars (9.4.14.0)
-    jruby-rack (1.2.5)
+    jruby-rack (1.2.6)
+    logger (1.7.0)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
-    ostruct (0.6.2)
-    rack (2.2.20)
-    rack-protection (3.2.0)
+    ostruct (0.6.3)
+    rack (3.2.3)
+    rack-protection (4.2.1)
       base64 (>= 0.1.0)
-      rack (~> 2.2, >= 2.2.4)
+      logger (>= 1.6.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.1.1)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0)
     rake (13.3.0)
     rexml (3.4.4)
     ruby2_keywords (0.0.5)
-    rubyzip (3.1.1)
-    sinatra (3.2.0)
+    rubyzip (3.2.0)
+    sinatra (4.2.1)
+      logger (>= 1.6.0)
       mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.2.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.2.1)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
     tilt (2.6.1)
     webrick (1.9.1)
@@ -42,7 +49,7 @@ PLATFORMS
 
 DEPENDENCIES
   jruby-jars (< 10)
-  rack (~> 2.2.20)
+  rack (~> 3.2.3)
   sinatra
   warbler!
   webrick
