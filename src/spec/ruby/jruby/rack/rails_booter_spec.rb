@@ -292,10 +292,4 @@ describe JRuby::Rack, "Rails controller extensions" do
     expect(controller.servlet_response).to eq servlet_response
   end
 
-  it "should add a #forward_to method for forwarding to another servlet" do
-    #@servlet_response = double "servlet response"
-    expect(controller.request).to receive(:forward_to).with("/forward.jsp")
-    controller.forward_to '/forward.jsp'
-  end
-
 end if defined? Rails

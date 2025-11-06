@@ -15,10 +15,6 @@ class SnoopController < ApplicationController
     @snoop[:system_properties] = Hash[*Java::JavaLang::System.getProperties.to_a.flatten] if defined?(JRUBY_VERSION)
   end
 
-  def hello
-    forward_to "/hello?from+SnoopController"
-  end
-
   def session_form
     session[:id]
     @session_hash = session.to_hash

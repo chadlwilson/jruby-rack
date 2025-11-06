@@ -69,4 +69,10 @@ require 'jruby/rack/core_ext'
 
 # loading Rack is delayed to allow the application to boot it's desired Rack
 # version (if it needs one) e.g. in a Rails application until Bundler setups
-JRuby::Rack::Booter.on_boot { require 'jruby/rack/rack_ext' }
+JRuby::Rack::Booter.on_boot do
+  begin
+    require 'rack'
+  rescue LoadError
+    require 'vendor/rack'
+  end unless defined?(::Rack::VERSION)
+end

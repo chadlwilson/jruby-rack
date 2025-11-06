@@ -7,8 +7,6 @@
 
 JRuby::Rack::RailsBooter.run_boot_hooks!
 
-require 'jruby/rack/rack_ext'
-
 require 'action_controller'
 
 module ActionController
@@ -19,10 +17,6 @@ module ActionController
 
     def servlet_response
       request.env['java.servlet_response']
-    end
-
-    def forward_to(url)
-      request.forward_to(url)
     end
   end
 end

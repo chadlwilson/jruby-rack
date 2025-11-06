@@ -32,7 +32,6 @@ As an executable jar within Jetty:
 |---------|-------------------------------|-----------------------------------|------------------------------------------|
 | Rails 7 | Status Page                   | http://localhost:8080/up          | http://localhost:8080/rails7/up          |
 | Rails 7 | Snoop Dump                    | http://localhost:8080/snoop       | http://localhost:8080/rails7/snoop       |
-| Rails 7 | Embedded JSP (non-functional) | http://localhost:8080/jsp/        | http://localhost:8080/rails7/jsp/        |
 | Rails 7 | Simple Form submission        | http://localhost:8080/simple_form | http://localhost:8080/rails7/simple_form |
 | Rails 7 | Body Posts                    | http://localhost:8080/body        | http://localhost:8080/rails7/body        |
 | Sinatra | Demo Index                    | http://localhost:8080/            | http://localhost:8080/sinatra            |
