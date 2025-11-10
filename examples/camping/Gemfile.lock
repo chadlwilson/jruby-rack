@@ -11,13 +11,13 @@ GEM
     markaby (0.9.4)
       builder
     ostruct (0.6.3)
-    rack (2.2.20)
+    rack (2.2.21)
     rackup (1.0.1)
       rack (< 3)
       webrick
-    rake (13.3.0)
+    rake (13.3.1)
     rexml (3.4.4)
-    rubyzip (3.2.0)
+    rubyzip (3.2.2)
     warbler (2.1.0)
       jruby-jars (>= 9.4, < 10.1)
       jruby-rack (>= 1.2.3, < 1.3)
@@ -35,7 +35,7 @@ DEPENDENCIES
   camping (< 3)
   jruby-jars (< 10)
   markaby
-  rack (~> 2.2.20)
+  rack (~> 2.2.21)
   rackup
   warbler (~> 2.1)
 
