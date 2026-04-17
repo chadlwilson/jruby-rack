@@ -23,8 +23,6 @@ import org.jruby.rack.logging.OutputStreamLogger;
 import org.jruby.rack.logging.StandardOutLogger;
 import org.jruby.util.SafePropertyAccessor;
 
-import static org.jruby.rack.RackLogger.Level.WARN;
-
 /**
  * A base implementation of that retrieves settings from system properties.
  *
