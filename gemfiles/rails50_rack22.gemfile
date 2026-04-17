@@ -8,6 +8,9 @@ gem "rspec", group: :test
 group :default do
   gem "rack", "~> 2.2.0"
   gem "rails", "~> 5.0.0"
+  gem "mutex_m"
+  gem "bigdecimal"
+  gem "base64"
 end
 
 group :development do
