@@ -6,21 +6,21 @@ GEM
       rake
       thor (>= 0.14.0)
     diff-lcs (1.6.2)
-    rack (2.2.23)
-    rake (13.3.1)
+    rack (2.2.25)
+    rake (13.4.2)
     rspec (3.13.2)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
       rspec-mocks (~> 3.13.0)
-    rspec-core (3.13.6)
+    rspec-core (3.13.7)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.5)
+    rspec-expectations (3.13.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.8)
+    rspec-mocks (3.13.9)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-support (3.13.7)
+    rspec-support (3.13.8)
     thor (1.5.0)
 
 PLATFORMS
@@ -33,6 +33,6 @@ PLATFORMS
 
 DEPENDENCIES
   appraisal
-  rack (~> 2.2.23)
-  rake (~> 13.3)
+  rack (~> 2.2.25)
+  rake (~> 13.4)
   rspec
